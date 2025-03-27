@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import Footer from "./Footer";
 
 const SignUp = () => {
     // create variables
@@ -49,7 +50,7 @@ const SignUp = () => {
             </div>
             <br />
             <br />
-            <div id="form" className="col-md-6 card shadow-danger p-4">
+            <div id="form" className="col-md-6 card shadow-danger p-4 my-1">
                 <h2>Sign Up</h2>
                 <b className="text-danger">{error}</b>
                 <b className="text-warning">{loading}</b>
@@ -65,6 +66,7 @@ const SignUp = () => {
 
                 <p>Already have an account?<Link to="/signin">Sign In</Link></p>
             </div>
+            <Footer/>
         </div>
      );
 }

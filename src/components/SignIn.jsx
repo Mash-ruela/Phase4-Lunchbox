@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const SignIn = () => {
     let [username,setUsername] = useState("")
@@ -52,7 +53,7 @@ const SignIn = () => {
                 
             </nav>
             </div>
-            <div id="form" className="col-md-6 card shadow p-4">
+            <div id="form" className="col-md-6 card shadow p-4 my-1">
                 <h2>Sign In</h2>
                 <b className="text-danger">{error}</b>
                 <b className="text-warning">{loading}</b>
@@ -63,6 +64,7 @@ const SignIn = () => {
                 </form> <br />
                 <p>Don't have an Account?<Link to="/signup">SignUp</Link></p> 
             </div>
+            <Footer/>
         </div>
 
     );

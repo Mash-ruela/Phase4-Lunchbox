@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Carousel from "./Carousel";
+import Footer from "./Footer";
 
 const GetProducts = () => {
     let [products,setProducts]=useState([])
@@ -29,7 +31,7 @@ const GetProducts = () => {
     const handleSearch=(value) =>{
         const filtered=products && products.filter((product)=> 
             product.product_name.toLowerCase().includes(value.toLowerCase())
-    )
+        )
         setFilteredProducts(filtered);
     }
     // useEffect(function,dependancy)
@@ -52,16 +54,20 @@ const GetProducts = () => {
                 <Link id="navbar"  className="btn mx-2" to="/addproducts">Add Products</Link>
                 <Link id="navbar"  className="btn mx-2" to="/signin">Sign In</Link>
                 <Link id="navbar"  className="btn mx-2" to="/signup">Sign Up</Link>
+                <Link id="navbar"  className="btn mx-2" to="/contactus">Contact Us</Link>
+                
                 
             </nav>
             </div>
             {/* {carousel} */}
+            
             {/* {content} */}
             <div className="justify-content-center m-3">
-                <div className="col-md-6">
-                <input type="text" placeholder="Search for a product by name" className="form-control" onChange={(e)=>handleSearch(e.target.value)}/>
+                <div  className="col-md-6 text-warning bg-dark">
+                <input  type="text" placeholder="Search for a product by name" className="form-control text-warning" onChange={(e)=>handleSearch(e.target.value)}/>
                 </div>
             </div>
+            <Carousel/>
 
             {filteredProducts.map((product)=>(
               <div className="col-md-3 justify-content-center mb-4">
@@ -70,7 +76,7 @@ const GetProducts = () => {
                   <div className="card-body">
                       <h5 className="mt-2">{product.product_name}</h5>
                       <p className="text-warning">{product.product_desc.slice(0,10)}</p>
-                      <b className="text-warning">{product.product_cost} $</b>
+                      <b className="text-warning">${product.product_cost}.00</b>
 
                       <button className="btn btn-dark w-100" onClick={()=>navigate("/singleproduct",{state:{product}})}>View Product</button>
                   </div>
@@ -80,6 +86,7 @@ const GetProducts = () => {
             ))}
             
             {/* {footer} */}
+            <Footer/>
         </div>
      );
 }

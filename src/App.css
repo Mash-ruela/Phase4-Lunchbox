@@ -88,6 +88,7 @@
  #card{
   color: orangered;
   background-color: black;
+  /* border-color: orangered; */
 }
 #body{
   background-color: grey;
@@ -95,6 +96,102 @@
 .text{
   color: orangered;
   font-size: x-large;
+}.dark-footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 20px 0;
+  text-align: center;
 }
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  margin-top: 10px;
+}
+
+.footer-link {
+  color: lightskyblue;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icon {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.map-container {
+    width: 100%;
+    margin-bottom: 20px; /* space between map and other content */
+}
+marquee{
+  color: orangered;
+}
+#cardo{
+  color: orangered;
+  background-color: black;
+  border-color: orangered;
+}
+.contact-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background-color: #f0c14b;
+  color: #000;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.faq {
+  margin-top: 20px;
+}
+#contact{
+  color: orangered;
+  font-weight: bold;
+  
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#one{
+  width: 100%;
+  
+  color: yellow;
+  height: 10vh;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 90px;
+  
+}
+
 
  
