@@ -192,6 +192,35 @@ marquee{
   font-size: 90px;
   
 }
+/* Default Light Mode */
+.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark-mode #card {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+#orangered{
+  color: orangered;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 
  

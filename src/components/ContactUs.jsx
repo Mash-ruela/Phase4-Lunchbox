@@ -33,7 +33,7 @@ const ContactUs = () => {
             </nav>
              
         </div>
-        <div  className="row bg-black">
+        <div  className="row bg-black p-5">
             <div className="col-md-6">
                 <h1 id="contact">Contact Us</h1>
                 <p className="text-white">We're here to help! Reach out with any questions, feedback, or order inquiries.</p>
