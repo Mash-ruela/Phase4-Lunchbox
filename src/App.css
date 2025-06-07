@@ -71,6 +71,7 @@
 #navbar{
   color: orangered;
   background-color: black;
+  display: flexbox;
 }
 #navbar:hover{
   background-color: yellow;
