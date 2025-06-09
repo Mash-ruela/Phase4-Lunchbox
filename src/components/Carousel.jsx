@@ -9,7 +9,7 @@ const Carousel = () => {
     {
       id: 1,
       image: "images/navbar3.jpg",
-      title: "𝓦𝓮𝓵𝓬𝓸𝓶𝓔!!",
+      title: "𝓦𝓮𝓵𝓬𝓸𝓶e!!",
       subtitle: "Discover our delicious lunch options"
     },
     {

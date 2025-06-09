@@ -6,6 +6,7 @@ import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaSearch, FaShoppingCart, FaUser, FaHome, FaEnvelope, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { div } from "framer-motion/client";
 
 const GetProducts = () => {
     let [products, setProducts] = useState([]);
@@ -128,7 +129,8 @@ const GetProducts = () => {
     );
 
     return (
-        <motion.div 
+       <div className="container-fluid">
+         <motion.div 
             id="body" 
             className="row"
             initial={{ opacity: 0 }}
@@ -604,6 +606,8 @@ const GetProducts = () => {
                 }
             `}</style>
         </motion.div>
+
+       </div>
     );
 };
 
