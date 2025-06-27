@@ -148,7 +148,7 @@ const Footer = () => {
           variants={marquee}
           animate="animate"
         >
-          Developed by Mwaura.B.Mwangi &copy; 2025 • Premium Web Solutions • Innovative Designs • Client-Focused Development •
+          Developed by Macharia.w.Ruth &copy; 2025 • Premium Web Solutions • Innovative Designs • Client-Focused Development •
         </motion.div>
       </motion.div>
     </motion.footer>

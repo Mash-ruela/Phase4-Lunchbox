@@ -20,170 +20,81 @@ const ContactUs = () => {
     setFile(null);
   };
 
-  // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
-  const navItem = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-  };
-
   return (
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="justify-content-center bg-black"
+      className="bg-black text-white"
     >
-      <div className="bg-black">
-        <motion.nav 
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="m-4 text-center"
-        >
-          {['Home', 'Add Products', 'Sign In', 'Sign Up'].map((link, index) => (
-            <motion.div key={index} variants={navItem}>
-              <Link 
-                id="navbar" 
-                className="btn mx-2"
-                to={link.toLowerCase().replace(' ', '')}
-                whileHover={{ scale: 1.05, color: "#ffc107" }}
-              >
-                {link}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.nav>
-      </div>
-      
-      <motion.div 
-        className="row bg-black p-5"
-        variants={container}
-        initial="hidden"
-        animate="show"
+      {/* Navigation Buttons */}
+      <motion.nav 
+        className="text-center py-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
       >
-        <div className="col-md-6">
-          <motion.h1 
-            id="contact"
-            variants={item}
-            whileHover={{ scale: 1.02 }}
-          >
-            Contact Us
-          </motion.h1>
-          
-          <motion.p 
-            className="text-white"
-            variants={item}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            We're here to help! Reach out with any questions, feedback, or order inquiries.
-          </motion.p>
-          
-          <motion.section 
-            className="contact-info"
-            variants={item}
-          >
-            <motion.h3 
-              id="contact"
-              whileHover={{ scale: 1.02 }}
-            >
-              Contact Information
-            </motion.h3>
-            
-            <motion.p 
-              className="text-white"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              Phone: <b> +254 (712) 885-690</b>
-            </motion.p>
-            
-            <motion.p 
-              className="text-white"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Email: @lunchboxconnect.co.ke
-            </motion.p>
-            
-            <motion.p 
-              className="text-white"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              Address: Modcom, westlands, Nairobi-Kenya
-            </motion.p>
-            
-            <motion.h2 
-              id="ona"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                delay: 0.7,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ scale: 1.05 }}
-            >
-              𝓦𝓮𝓵𝓬𝓸𝓶𝓮!!
-            </motion.h2>
-          </motion.section>
-        </div>
-      
-        <div className="col-md-6">
-          <motion.div 
-            className="mt-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
-            <motion.div 
-              id="form" 
-              className="col-md-6 card shadow p-4 my-1"
-              whileHover={{ 
-                boxShadow: "0 10px 25px rgba(255, 193, 7, 0.3)",
-                y: -5
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+        <motion.div className="d-inline-block mx-2" whileHover={{ scale: 1.05 }}>
+          <Link to="/" className="btn btn-warning text-dark fw-bold px-4">Home</Link>
+        </motion.div>
+
+        <motion.div className="d-inline-block mx-2" whileHover={{ scale: 1.05 }}>
+          <Link to="/addproducts" className="btn btn-warning text-dark fw-bold px-4">Add Products</Link>
+        </motion.div>
+
+        <motion.div className="d-inline-block mx-2" whileHover={{ scale: 1.05 }}>
+          <Link to="/signin" className="btn btn-warning text-dark fw-bold px-4">Sign In</Link>
+        </motion.div>
+
+        <motion.div className="d-inline-block mx-2" whileHover={{ scale: 1.05 }}>
+          <Link to="/signup" className="btn btn-warning text-dark fw-bold px-4">Sign Up</Link>
+        </motion.div>
+      </motion.nav>
+
+      {/* Contact Section */}
+      <div className="container py-5">
+        <div className="row">
+          {/* Left: Info */}
+          <div className="col-md-6 mb-4">
+            <motion.h1 whileHover={{ scale: 1.05 }} className="text-warning">
+              Contact Us
+            </motion.h1>
+            <p>We're here to help! Reach out with any questions, feedback, or order inquiries.</p>
+
+            <motion.div className="mt-4">
+              <h3 className="text-warning">Contact Information</h3>
+              <p><b>Phone:</b> +254 (745) 770-411</p>
+              <p><b>Email:</b> ruelamacharia2007@gmail.com</p>
+              <p><b>Address:</b> VarsityVille, Nairobi-Kenya</p>
+
               <motion.h2
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                className="text-warning mt-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 100 }}
+                whileHover={{ scale: 1.05 }}
               >
-                Suggestion Box
+                𝓦𝓮𝓵𝓬𝓸𝓶𝓮!!
               </motion.h2>
-              
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <label className="text-warning" htmlFor="subject">Subject:</label>
-                  <select 
-                    id="subject" 
-                    className="form-control" 
-                    value={subject} 
+            </motion.div>
+          </div>
+
+          {/* Right: Form */}
+          <div className="col-md-6">
+            <motion.div
+              className="card p-4 bg-dark border-light shadow"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(255, 193, 7, 0.3)" }}
+            >
+              <h2 className="text-warning mb-3">Suggestion Box</h2>
+
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="subject" className="form-label text-light">Subject:</label>
+                  <select
+                    id="subject"
+                    className="form-control"
+                    value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                   >
                     <option value="">Select a subject</option>
@@ -193,89 +104,70 @@ const ContactUs = () => {
                     <option value="partnership">Partnership Opportunities</option>
                     <option value="general">General Inquiry</option>
                   </select>
-                </motion.div>
-                
-                {subject === 'order' || subject === 'delivery' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <label htmlFor="orderNumber">Order Number:</label>
-                    <input 
-                      type="text" 
-                      id="orderNumber" 
-                      className="form-control" 
-                      value={orderNumber} 
-                      onChange={(e) => setOrderNumber(e.target.value)} 
+                </div>
+
+                {(subject === "order" || subject === "delivery") && (
+                  <div className="mb-3">
+                    <label htmlFor="orderNumber" className="form-label text-light">Order Number:</label>
+                    <input
+                      type="text"
+                      id="orderNumber"
+                      className="form-control"
+                      value={orderNumber}
+                      onChange={(e) => setOrderNumber(e.target.value)}
                     />
-                  </motion.div>
+                  </div>
                 )}
-                
-                {subject === 'feedback' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <label htmlFor="productName">Product Name:</label>
-                    <input 
-                      type="text" 
-                      id="productName" 
-                      className="form-control" 
-                      value={productName} 
-                      onChange={(e) => setProductName(e.target.value)} 
+
+                {subject === "feedback" && (
+                  <div className="mb-3">
+                    <label htmlFor="productName" className="form-label text-light">Product Name:</label>
+                    <input
+                      type="text"
+                      id="productName"
+                      className="form-control"
+                      value={productName}
+                      onChange={(e) => setProductName(e.target.value)}
                     />
-                  </motion.div>
+                  </div>
                 )}
-                
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <label className="text-warning" htmlFor="message">Message:</label>
-                  <textarea 
-                    id="message" 
-                    className="form-control" 
-                    value={message} 
+
+                <div className="mb-3">
+                  <label htmlFor="message" className="form-label text-light">Message:</label>
+                  <textarea
+                    id="message"
+                    className="form-control"
+                    rows="4"
+                    value={message}
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <label className="text-warning" htmlFor="file">Upload File:</label>
-                  <input 
-                    type="file" 
-                    id="file" 
-                    className="form-control" 
-                    onChange={(e) => setFile(e.target.files[0])} 
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="file" className="form-label text-light">Upload File:</label>
+                  <input
+                    type="file"
+                    id="file"
+                    className="form-control"
+                    onChange={(e) => setFile(e.target.files[0])}
                   />
-                </motion.div>
-                
+                </div>
+
                 <motion.button
-                  id="form-button"
-                  className="btn btn-primary mt-3"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 0 10px rgba(255, 193, 7, 0.5)"
-                  }}
+                  type="submit"
+                  className="btn btn-warning text-dark fw-bold w-100"
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400 }}
                 >
                   Submit
                 </motion.button>
               </form>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-        
-        <Footer/>
-      </motion.div>
+      </div>
+
+      <Footer />
     </motion.div>
   );
 };

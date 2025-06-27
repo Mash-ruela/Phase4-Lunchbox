@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { BeatLoader } from "react-spinners";
@@ -19,7 +18,7 @@ const SingleProduct = () => {
 
     useEffect(() => {
         if (!location.state?.product) {
-            navigate("/singleproduct"); // Redirect to home if no product data
+            navigate("/"); // Redirect to home if no product data
         } else {
             setProduct(location.state.product);
         }
@@ -27,8 +26,6 @@ const SingleProduct = () => {
 
     const submitForm = async (e) => {
         e.preventDefault();
-        
-        // Add null check for product
         if (!product) {
             setError("Product information is not available");
             return;
@@ -71,7 +68,20 @@ const SingleProduct = () => {
             transition={{ duration: 0.5 }}
         >
             <div className="container-fluid">
-                <div className="row justify-content-center mt-3">
+
+                {/* Return Button */}
+                <div className="m-3">
+                    <motion.button
+                        className="btn btn-success"
+                        onClick={() => navigate(-1)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        ⬅️ Return
+                    </motion.button>
+                </div>
+
+                <div className="row justify-content-center mt-2">
                     <motion.div 
                         id="ona"
                         initial={{ y: -50 }}
