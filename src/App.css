@@ -221,6 +221,36 @@ marquee{
   font-style: italic;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.star-rating {
+  font-size: 24px;
+  color: #ccc;
+}
+
+.star-rating .star {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-rating .star.filled {
+  color: #ffc107;
+}
+
+.star-rating .star.editable:hover {
+  color: #ffc107;
+}
+/* Reviews Card Styling */
+.reviews-card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #cardo {
+        margin-bottom: 2rem;
+    }
+}
 
 
 
